@@ -8,54 +8,21 @@
 
 import UIKit
 
-class ShowsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-   
-    let showList = [
-    [
-        
-        
-        "title": "Shameless",
-        "time": "2 days",
-        "image": "image1"
-        ],
-    
-[
-    
-    "title": "Once upon a time",
-    "time": "2 days",
-    "image": "image2"
-        ],
+class ShowsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
-[
-    
-    "title": "Game of thrones",
-    "time": "2 days",
-    "image": "image3"
-    
+    let shows = [
+        [
+            "name": "Game of Thrones" ,
+            "time": "2 days ago",
+            "image": "game-of-thrones"
         ],
-[
-    
-    "title": "Game of thrones",
-    "time": "2 days",
-    "image": "image4"
-    
-        ],
-[
-    
-    "title": "Game of thrones",
-    "time": "2 days",
-    "image": "image5"
-    
-        ],
-[
-    
-    "title": "Game of thrones",
-    "time": "2 days",
-    "image": "image6"
-    
+        [
+            "name": "Game of Thrones" ,
+            "time": "2 days ago",
+            "image": "game-of-thrones"
         ]
-
     ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -65,34 +32,27 @@ class ShowsViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.showList.count
+        return shows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "show", for: indexPath) as? ShowTableViewCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "showItem", for: indexPath) as? ShowItemTableViewCell
+        let show = self.shows[indexPath.row]
         
-        let show = self.showList[indexPath.row]
-        
-        
-        cell?.imageView?.image = UIImage.init(named:show["image"]!)
-        cell?.imageView?.contentMode = .scaleAspectFit
-        cell?.titleLbl.text = show ["title"]
-        cell?.timeLbl.text = show ["time"]
-       
-        
+        cell?.nameLbl.text = show["name"]
+        cell?.timeLbl.text = show["time"]
+        cell?.backgroundImage.image = UIImage.init(named: show["image"]!)
         
         return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-
-    
-    
+        return 90
     }
+    
 }
-    
-    
 
