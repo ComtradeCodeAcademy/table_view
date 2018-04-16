@@ -12,7 +12,10 @@
 		07252095207E70E2002E751A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07252093207E70E2002E751A /* Main.storyboard */; };
 		07252097207E70E2002E751A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07252096207E70E2002E751A /* Assets.xcassets */; };
 		0725209A207E70E2002E751A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07252098207E70E2002E751A /* LaunchScreen.storyboard */; };
-		F197E21220810C080003E7FC /* ShowUiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F197E21120810C080003E7FC /* ShowUiTableViewCell.swift */; };
+		07B43D9A20812D340022F711 /* ShowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B43D9920812D340022F711 /* ShowDetailsViewController.swift */; };
+		07C96006208506BB00C89FD4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C96005208506BB00C89FD4 /* SettingsViewController.swift */; };
+		07C9600820850C2C00C89FD4 /* ProfileAnalyticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C9600720850C2C00C89FD4 /* ProfileAnalyticTableViewCell.swift */; };
+		A6FDF0DB2080931A00FA2F3E /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDF0DA2080931A00FA2F3E /* ShowTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +26,10 @@
 		07252096207E70E2002E751A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07252099207E70E2002E751A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0725209B207E70E2002E751A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F197E21120810C080003E7FC /* ShowUiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUiTableViewCell.swift; sourceTree = "<group>"; };
+		07B43D9920812D340022F711 /* ShowDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewController.swift; sourceTree = "<group>"; };
+		07C96005208506BB00C89FD4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		07C9600720850C2C00C89FD4 /* ProfileAnalyticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAnalyticTableViewCell.swift; sourceTree = "<group>"; };
+		A6FDF0DA2080931A00FA2F3E /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				0725208F207E70E2002E751A /* AppDelegate.swift */,
-				F197E21120810C080003E7FC /* ShowUiTableViewCell.swift */,
 				07252091207E70E2002E751A /* ShowsViewController.swift */,
+				07B43D9920812D340022F711 /* ShowDetailsViewController.swift */,
+				A6FDF0DA2080931A00FA2F3E /* ShowTableViewCell.swift */,
+				07C9600720850C2C00C89FD4 /* ProfileAnalyticTableViewCell.swift */,
+				07C96005208506BB00C89FD4 /* SettingsViewController.swift */,
 				07252093207E70E2002E751A /* Main.storyboard */,
 				07252096207E70E2002E751A /* Assets.xcassets */,
 				07252098207E70E2002E751A /* LaunchScreen.storyboard */,
@@ -139,9 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B43D9A20812D340022F711 /* ShowDetailsViewController.swift in Sources */,
+				A6FDF0DB2080931A00FA2F3E /* ShowTableViewCell.swift in Sources */,
+				07C9600820850C2C00C89FD4 /* ProfileAnalyticTableViewCell.swift in Sources */,
 				07252092207E70E2002E751A /* ShowsViewController.swift in Sources */,
+				07C96006208506BB00C89FD4 /* SettingsViewController.swift in Sources */,
 				07252090207E70E2002E751A /* AppDelegate.swift in Sources */,
-				F197E21220810C080003E7FC /* ShowUiTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
