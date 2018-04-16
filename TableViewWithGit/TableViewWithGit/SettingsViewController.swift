@@ -36,6 +36,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         ]
         ] as [String : Any]
     
+    let profileInfo = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,12 +62,16 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0{
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "analytic", for: indexPath)
             as! ProfileAnalyticTableViewCell
+        
+        
         
         cell.followersLbl.text = "followers"
         cell.followingLbl.text = "following"
@@ -81,7 +87,27 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.followBttn.layer.cornerRadius = 5
         cell.followBttn.layer.borderWidth = 1
         cell.followBttn.layer.borderColor = UIColor.blue.cgColor
+            
+            
         
+        return cell
+        }
+        
+        if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "profileInfo", for: indexPath)
+                as! ProfileInfoTableViewCell
+            
+            cell.instGridLbl.text = "instagridsapp"
+            cell.infoText.text = "cropp photos for instagram" + "\n" + "www.instagram.com"
+            cell.urlLbl.text = "www.instagram.com"
+            
+            return cell
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "post", for: indexPath)
+            as! PostTableViewCell
+        
+        cell.postImg.image = UIImage.init(named: "limitless")
+
         return cell
     }
     
