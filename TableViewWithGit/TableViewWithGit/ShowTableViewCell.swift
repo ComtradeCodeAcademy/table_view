@@ -9,7 +9,8 @@
 import UIKit
 
 class ShowTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var favoriteImg: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
