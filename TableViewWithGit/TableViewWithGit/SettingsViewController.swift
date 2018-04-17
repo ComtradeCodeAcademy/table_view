@@ -109,10 +109,19 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.postImg.image = UIImage.init(named: "limitless")
 
         return cell
+        
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            
+        return 80
+        }
+        if indexPath.row == 1 {
+            return 100
+        }
         return 120
-    }
 
 }
