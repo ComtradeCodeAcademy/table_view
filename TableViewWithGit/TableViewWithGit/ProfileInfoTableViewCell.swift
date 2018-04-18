@@ -16,4 +16,15 @@ class ProfileInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var infoText: UITextView!
     
     @IBOutlet weak var urlLbl: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
 }

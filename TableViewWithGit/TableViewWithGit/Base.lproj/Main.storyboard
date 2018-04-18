@@ -420,7 +420,6 @@
                                         <connections>
                                             <outlet property="infoText" destination="fvl-N1-u0j" id="N8E-l1-dF1"/>
                                             <outlet property="instGridLbl" destination="eJp-D0-RqN" id="vhB-N6-oAt"/>
-                                            <outlet property="instaGridLbl" destination="eJp-D0-RqN" id="M3d-2H-7z2"/>
                                             <outlet property="urlLbl" destination="Iip-a8-dh5" id="R75-u4-6XP"/>
                                         </connections>
                                     </tableViewCell>

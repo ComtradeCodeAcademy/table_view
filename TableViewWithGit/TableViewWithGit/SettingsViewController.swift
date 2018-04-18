@@ -62,7 +62,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -112,16 +112,17 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         
             
         }
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
             
-        return 80
+            return 80
         }
         if indexPath.row == 1 {
             return 100
         }
         return 120
+    }
+    
+
 
 }
