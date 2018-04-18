@@ -9,7 +9,9 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
+//    var profile: Profile = Profile.init(profileImage: "limitless", analytics: Analytics.init(posts: 5, followers: 1, following: 18))
+    
     let dataSet = [
         "profile":[
             "website": "http://google.com",
@@ -27,7 +29,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             "location": "1231",
             "tags": ["tag1", "tag2", "tag3"]
                 ]
-            , [
+            ,
+            [
                 "imageURL":"somePath",
                 "location": "1231",
                 "tags": ["tag5", "tag6", "tag7"]
@@ -58,12 +61,37 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     */
     
-    
+    //MARK: - TODO:  TableView Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let posts = dataSet["posts"] as? [[String: Any]] {
+            return posts.count + 2
+        }
+        
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.row {
+        case 0:
+            let cell = self.initProfileCell(data: self.dataSet, tableView: tableView, indexPath: indexPath)
+            return cell
+        case 1:
+            let cell = self.initDetailsCell(data: self.dataSet, tableView: tableView, indexPath: indexPath)
+            return cell
+            
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "analytic", for: indexPath)
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+
+    //MARK: - Custom Cells
+    func initProfileCell(data:[String : Any], tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "analytic", for: indexPath)
             as! ProfileAnalyticTableViewCell
         
@@ -85,8 +113,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+    func initDetailsCell(data:[String : Any], tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+     
+        let cell = tableView.dequeueReusableCell(withIdentifier: "profileInfo", for: indexPath)
+        
+        return cell
     }
-
 }

@@ -11,27 +11,10 @@ import UIKit
 class ShowsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
     let shows = [
-        [
-            "name": "Game of Thrones" ,
-            "time": "2 days ago",
-            "image": "game-of-thrones"
-        ],
-        [
-            "name": "Game of Thrones" ,
-            "time": "3 days ago",
-            "image": "game-of-thrones"
-        ],
-        [
-            "name": "Limitless" ,
-            "time": "6 days ago",
-            "image": "limitless",
-        ],
-        [
-            "name": "Lost in space" ,
-            "time": "1 days ago",
-            "image": "LostInSpace",
-            "isFavorite": "true"
-        ]
+        TVShow.init(name: "Game of Thrones", time: "2 days ago", imageURL: "game-of-thrones"),
+        TVShow.init(name: "Game of Thrones", time: "3 days ago", imageURL: "game-of-thrones"),
+        TVShow.init(name: "Limitless", time: "6 days ago", imageURL: "limitless"),
+        TVShow.init(name: "Lost in space", time: "1 days ago", imageURL: "LostInSpace", isFavorite: true),
         
     ]
     
@@ -57,14 +40,13 @@ class ShowsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let show = self.shows[indexPath.row]
         
-        cell?.nameLbl.text = show["name"]
-        cell?.timeLbl.text = show["time"]
-        cell?.backgroundImage.image = UIImage.init(named: show["image"]!)
-        
-        if (show["isFavorite"] != nil) {
-            cell?.favoriteImg.isHidden = false
+        cell?.nameLbl.text = show.name
+        cell?.timeLbl.text = show.time
+        cell?.backgroundImage.image = UIImage.init(named: show.imageURL)
+
+        if let favoriteImg = cell?.favoriteImg {
+            favoriteImg.isHidden = show.isFavorite == false
         }
-        
         
         return cell!
     }

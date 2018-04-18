@@ -386,13 +386,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="post" id="GLH-Yp-FeW">
-                                        <rect key="frame" x="0.0" y="192" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="post" rowHeight="300" id="GLH-Yp-FeW" customClass="PostTableViewCell" customModule="TableViewWithGit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="192" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GLH-Yp-FeW" id="nDl-gv-OY4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pft-qa-qin">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="pft-qa-qin" secondAttribute="trailing" id="0yg-dt-3Jo"/>
+                                                <constraint firstItem="pft-qa-qin" firstAttribute="leading" secondItem="nDl-gv-OY4" secondAttribute="leading" id="2ZS-LY-LG3"/>
+                                                <constraint firstItem="pft-qa-qin" firstAttribute="top" secondItem="nDl-gv-OY4" secondAttribute="top" id="e1Q-Cp-Uz8"/>
+                                                <constraint firstAttribute="bottom" secondItem="pft-qa-qin" secondAttribute="bottom" id="sHe-W0-Ecy"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgView" destination="pft-qa-qin" id="7G2-XD-RK6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
